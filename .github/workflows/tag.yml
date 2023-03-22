@@ -30,13 +30,4 @@ jobs:
           dir ${{ github.workspace }}
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-         
-      - name: Commands
-        shell: bash
-        run: |
-          git checkout ${{ inputs.TAG_ID }}
-          git status
-          git pull origin ${{ inputs.GIT_BRANCH }}
-          git fetch --all
-          git tag ${{ inputs.TAG_ID }}
-          git push origin ${{ inputs.TAG_ID }}
+
